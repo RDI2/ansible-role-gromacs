@@ -22,7 +22,7 @@ export LD_LIBRARY_PATH=/opt/gromacs/5.1.1/lib64:$LD_LIBRARY_PATH
 gmx_mpi_d --version
 ```
 
-The output "gmx_mpi_d --version" should look like this:
+The output `gmx_mpi_d --version` should look like this:
 
 ```
 GROMACS:      gmx_mpi_d, VERSION 5.1.1 (double precision)
