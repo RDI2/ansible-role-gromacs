@@ -14,7 +14,7 @@
   file: path=/tmp/gromacs-{{ gromacs_version }}/build state=directory
 
 - name: cmake gromacs
-  shell: cmake .. -DGMX_DOUBLE=ON -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DCMAKE_INSTALL_PREFIX={{ gromacs_prefix }}
+  shell: CC=mpicc CXX=mpiCC cmake .. -DGMX_MPI=ON -DGMX_DOUBLE=ON -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DCMAKE_INSTALL_PREFIX={{ gromacs_prefix }}
   args:
     chdir: /tmp/gromacs-{{ gromacs_version }}/build
     creates: /tmp/gromacs-{{ gromacs_version }}/build/Makefile
