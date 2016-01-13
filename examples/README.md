@@ -1,4 +1,4 @@
-Tests role gromacs with Vagrant
+Test this playbook with Vagrant
 ===============================
 
 Install dependencies:
