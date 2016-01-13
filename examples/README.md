@@ -7,7 +7,7 @@ Install dependencies:
 ansible-galaxy install -p roles/ -r requirement.yml
 ```
 
-Vagrant up:
+Start a VM and install Gromacs:
 
 ```bash
 vagrant up
