@@ -19,13 +19,13 @@
     chdir: /tmp/gromacs-{{ gromacs_version }}/build
     creates: /tmp/gromacs-{{ gromacs_version }}/build/Makefile
   environment:
-    PATH: "{{ binutils_prefix }}/bin:{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
-    LD_LIBRARY_PATH: "{{ binutils_prefix }}/lib:{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
+    PATH: "{{ gcc_prefix }}/bin:{{ binutils_prefix }}/bin:{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
+    LD_LIBRARY_PATH: "{{ gcc_prefix }}/lib64:{{ binutils_prefix }}/lib:{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
 
 - name: install gromacs
   shell: make && make install
   args:
     chdir: /tmp/gromacs-{{ gromacs_version }}/build
   environment:
-    PATH: "{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
-    LD_LIBRARY_PATH: "{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
+    PATH: "{{ gcc_prefix }}/bin:{{ binutils_prefix }}/bin:{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
+    LD_LIBRARY_PATH: "{{ gcc_prefix }}/lib64:{{ binutils_prefix }}/lib:{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
