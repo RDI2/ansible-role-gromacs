@@ -1,3 +1,4 @@
 ---
 
-- src: rdi2sys.openmpi
+- src: RDI2.openmpi
+- src: RDI2.binutils

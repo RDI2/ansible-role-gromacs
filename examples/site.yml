@@ -1,4 +1,4 @@
 ---
 - hosts: all
   roles:
-    - { role: "rdi2sys.gromacs" }
+    - { role: "RDI2.gromacs" }

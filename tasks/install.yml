@@ -14,13 +14,13 @@
   file: path=/tmp/gromacs-{{ gromacs_version }}/build state=directory
 
 - name: build gromacs
-  shell: CC=mpicc CXX=mpicxx cmake .. -DGMX_SIMD=AVX_256 -DGMX_MPI=ON -DGMX_DOUBLE=ON -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DCMAKE_INSTALL_PREFIX={{ gromacs_prefix }}
+  shell: CC=mpicc CXX=mpicxx cmake .. -DGMX_SIMD=AVX2_256 -DGMX_MPI=ON -DGMX_DOUBLE=ON -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DCMAKE_INSTALL_PREFIX={{ gromacs_prefix }}
   args:
     chdir: /tmp/gromacs-{{ gromacs_version }}/build
     creates: /tmp/gromacs-{{ gromacs_version }}/build/Makefile
   environment:
-    PATH: "{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
-    LD_LIBRARY_PATH: "{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
+    PATH: "{{ binutils_prefix }}/bin:{{ openmpi_prefix }}/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin"
+    LD_LIBRARY_PATH: "{{ binutils_prefix }}/lib:{{ openmpi_prefix }}/lib:{{ openmpi_prefix }}/lib/openmpi"
 
 - name: install gromacs
   shell: make && make install
