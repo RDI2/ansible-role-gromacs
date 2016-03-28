@@ -16,7 +16,9 @@ Role Variables
 Dependencies
 ------------
 
-- [rdi2sys.openmpi](https://galaxy.ansible.com/detail#/role/6460)
+- RDI2.gcc
+- RDI2.openmpi
+- RDI2.binutils
 
 Installation
 ------------
@@ -24,13 +26,13 @@ Installation
 Regular installation:
 
 ```
-ansible-galaxy install rdi2sys.gromacs
+ansible-galaxy install RDI2.gromacs
 ```
 
 Installation to a specific directory(e.g. roles/):
 
 ```
-ansible-galaxy install -p roles/ rdi2sys.gromacs
+ansible-galaxy install -p roles/ RDI2.gromacs
 ```
 
 Example Playbook
@@ -38,7 +40,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: rdi2sys.gromacs }
+         - { role: RDI2.gromacs }
 
 License
 -------
