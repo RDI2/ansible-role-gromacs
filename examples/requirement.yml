@@ -1,4 +1,5 @@
 ---
 
+- src: RDI2.gcc
 - src: RDI2.openmpi
 - src: RDI2.binutils

@@ -1,3 +1,4 @@
 .vagrant
+roles/RDI2.gcc
 roles/RDI2.openmpi
 roles/RDI2.binutils
